@@ -15,7 +15,7 @@ export class FolderPage implements OnInit {
   constructor(private platform: Platform) {
     Parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("L1FFfpsxK7K1wvaTujWJUASQjfvBz5LNUDdPvK5E", "wIgCTMul7e9DrhNlU0oEUW0mlSml2xF05gB0n0BI");
-    
+
   }
 
   ngOnInit() {
