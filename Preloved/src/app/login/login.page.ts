@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import Parse from "parse";
 import {Router} from "@angular/router";
+import {GenerateData} from "../../info/generateData";
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public username: string = "123";
-  public password: string = "123";
+  public username: string = "";
+  public password: string = "";
 
   constructor(private toastController: ToastController, private router: Router) {
     Parse.serverURL = 'https://parseapi.back4app.com/';
@@ -22,8 +23,8 @@ export class LoginPage implements OnInit {
 
   signIn() {
     Parse.User.logIn(this.username, this.password).then((resp: String) => {
-      console.log('Logged in successfully', resp);
-
+      //Create current_user data
+      GenerateData.current_user = GenerateData.getCurrentUser();
       // jump to home page
       this.router.navigateByUrl('/folder/inbox');
     }, (err: { message: any; }) => {
@@ -39,10 +40,17 @@ export class LoginPage implements OnInit {
   }
 
   signUp() {
+    if(this.username == '' || this.password == null){
+      this.toastController.create({
+        message: 'Invalid username or password',
+        duration: 2000
+      }).then((toast) => {
+        toast.present();
+      });
+      return;
+    }
 
     Parse.User.signUp(this.username, this.password).then((resp: String) => {
-      console.log('Logged in successfully', resp);
-
       // Clears up the form
       this.username = '';
       this.password = '';
@@ -53,6 +61,10 @@ export class LoginPage implements OnInit {
       }).then((toast) => {
         toast.present();
       });
+
+      //Create current_user data
+      GenerateData.current_user = GenerateData.getCurrentUser();
+
       // jump to home page
       this.router.navigateByUrl('/folder/inbox');
 
