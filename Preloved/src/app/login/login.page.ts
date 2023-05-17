@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular';
 import Parse from "parse";
 import {Router} from "@angular/router";
 import {GenerateData} from "../../info/generateData";
+import {PreLovedCard} from "../../info/PreLovedCard";
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,11 @@ export class LoginPage implements OnInit {
     Parse.User.logIn(this.username, this.password).then((resp: String) => {
       //Create current_user data
       GenerateData.current_user = GenerateData.getCurrentUser();
+
+      //TEST
+      //preLovedCard: PreLovedCard = new PreLovedCard();
+
+
       // jump to home page
       this.router.navigateByUrl('/folder/inbox');
     }, (err: { message: any; }) => {
