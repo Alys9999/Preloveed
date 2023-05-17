@@ -29,6 +29,8 @@ export class GenerateData {
   constructor() {
   }
   /*USER*/
+  //get the current user
+  //OUTPUT: A User Object that contains all the information about the current user
   static getCurrentUser(): User{
     let cu = Parse.User.current();
     let username = cu.getUsername();
@@ -83,10 +85,14 @@ export class GenerateData {
   /*PreLovedCard*/
   //get a PreLovedCard by providing its id
   //INPUT: PreLovedCard's id
-  static getPreLovedCardById(preLovedId: string): PreLovedCard {
+  //OUTPUT: the corresponding PreLovedCard, or null if that PreLovedCard does not exist.
+  static getPreLovedCardById(preLovedId: string): PreLovedCard | null {
     let query = Parse.Query("Post");
     query.equalTo(this.idColumn, preLovedId);
     let post = query.first();
+    if(post == null){
+      return null;
+    }
     let preLoved = new PreLovedCard(preLovedId);
     preLoved.title = post.get(this.titleColumn);
     preLoved.category = post.get(this.categoryColumn);
@@ -96,7 +102,42 @@ export class GenerateData {
     preLoved.description = post.get(this.descriptionColumn);
     return preLoved;
   }
-  static postNewPreLovedCard(preLovedCard: PreLovedCard): void{
+  //add a new post to database
+  //INPUT: A PreLovedCard that contains all the information about this prelove item
+  static async postNewPreLovedCard(preLovedCard: PreLovedCard) {
+    let Post = Parse.Object.extends("Post");
+    let post = new Post();
+    post.set(this.idColumn, preLovedCard.id);
+    post.set(this.titleColumn, preLovedCard.title);
+    post.set(this.categoryColumn, preLovedCard.category);
+    post.set(this.imagesColumn, preLovedCard.images);
+    post.set(this.priceColumn, preLovedCard.price);
+    post.set(this.conditionColumn, preLovedCard.condition);
+    post.set(this.descriptionColumn, preLovedCard.description);
+    await post.save().then(() => {
+      console.log('Successful updated');
+    }).catch((error: any) => {
+      console.error(`Error saving: ${error}`);
+    });
+  }
 
+  //Update information of a PreLovedCard to database
+  //IMPORTANT NOTE: For this function, it only updates the database,
+  //So, you need to modify the current PreLovedCard object or call getPreLovedCardById(id) to update the stored object.
+  //INPUT: (PreLovedCard's id, the column that you want to modify, new value)
+  static async updatePreLovedCard(preLovedId: string, columnName: string, updateVal: any){
+    let query = new Parse.Query("Post");
+    query.equalTo(this.idColumn, preLovedId);
+    let post = await query.first();
+    //NO SUCH POST
+    if(post == null){
+      return;
+    }
+    post.set(columnName, updateVal); //Update the value
+    await post.save().then(() => {
+      console.log('Successful updated');
+    }).catch((error: any) => {
+      console.error(`Error saving: ${error}`);
+    });
   }
 }
