@@ -25,7 +25,7 @@
 //   }
 // }
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Parse from 'parse';
 
@@ -33,6 +33,7 @@ import Parse from 'parse';
   selector: 'app-folder',
   templateUrl: './homepage.page.html',
   styleUrls: ['./homepage.page.scss'],
+  encapsulation: ViewEncapsulation.None, // DELETE?
 })
 export class HomePage implements OnInit {
   public folder!: string;
