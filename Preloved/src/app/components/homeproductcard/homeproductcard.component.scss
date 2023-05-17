@@ -8,6 +8,11 @@
 //     border: 1.5px solid black;
 // }
 
+// .card-content {
+//     margin-top: -8%;
+//     margin-bottom: -8%;
+// }
+
 .labels {
     display: flex;
     justify-content: space-between;
@@ -15,4 +20,5 @@
 
 .product-distance {
     color: black;
+    font-size: 2vw; /* adjust this value to your liking */
 }
