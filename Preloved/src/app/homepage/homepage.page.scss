@@ -26,3 +26,24 @@ ion-menu-button {
   #container a {
     text-decoration: none;
   }
+
+.menu-button-design {
+  --color: white; /* Set the desired color */
+}
+
+.menu-button-design {
+  --background: #FABE58;
+  --padding: 10px; /* Adjust the padding to change the size */
+  // --border-radius: 50%; 
+}
+
+.cart-button-design {
+  --background: #FABE58;
+  --height: 50px;
+}
+
+.logo {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+}
