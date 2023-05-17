@@ -7,6 +7,7 @@ import { HomePage } from './homepage.page';
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { ProductcardModule } from '../components/productcard/productcard.module';
 import { Homeproductcardmodule } from '../components/homeproductcard/homeproductcard.module';
+import { Columnviewmodule } from '../components/columnview/columnview.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { Homeproductcardmodule } from '../components/homeproductcard/homeproduct
     HomepageRoutingModule,
     NavbarModule,
     ProductcardModule,
-    Homeproductcardmodule
+    Homeproductcardmodule,
+    Columnviewmodule
   ],
   declarations: [HomePage],
 })
