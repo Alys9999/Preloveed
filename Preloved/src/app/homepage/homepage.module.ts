@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomePage } from './homepage.page';
 import { NavbarModule } from '../components/navbar/navbar.module';
+import { ProductcardModule } from '../components/productcard/productcard.module';
+
 
 @NgModule({
   imports: [
@@ -13,6 +15,8 @@ import { NavbarModule } from '../components/navbar/navbar.module';
     FormsModule,
     HomepageRoutingModule,
     NavbarModule,
+    ProductcardModule,
+
   ],
   declarations: [HomePage],
 })
