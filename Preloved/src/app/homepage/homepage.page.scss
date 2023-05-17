@@ -27,6 +27,32 @@
 //     text-decoration: none;
 //   }
 
+.scrollable-row {
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.scrollable-row::-webkit-scrollbar {
+  display: none; /* Hide the scroll bar */
+}
+
+.row-flex-container {
+  display: flex;
+}
+
+.row-flex-item {
+  flex: 0 0 auto;
+  --background: #FABE58;
+  color: black;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-ripple {
+  --background-activated: grey;
+  --ripple-color: grey;
+}
+
 .menu-button-design {
   --background: #FABE58;
 }
