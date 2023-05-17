@@ -12,22 +12,24 @@ import in homepage module -->
     <ion-header>
         <ion-toolbar color="default">
             
-            <ion-buttons slot="start">
-                <ion-menu-button class="menu-button-design" color="light"></ion-menu-button>
-            </ion-buttons>
+            <ion-menu-button slot="start" class="menu-button-design" color="light"></ion-menu-button>
             
             <ion-img src="assets/icon/logo.svg" class="logo"></ion-img>
             
-            <ion-buttons slot="end">
-                <ion-button class="cart-button-design">
-                    <ion-icon name="cart" src="assets/icon/cart.svg"></ion-icon>
-                </ion-button>
-            </ion-buttons>
+            <ion-button class="cart-button-design" slot="end">
+                <ion-icon name="cart" src="assets/icon/cart.svg"></ion-icon>
+            </ion-button>
         
         </ion-toolbar>
     </ion-header>
 
+    <ion-searchbar class="searchbar"></ion-searchbar>
+
+    
     <app-productcard></app-productcard>
+
+    <app-homeproductcard></app-homeproductcard>
+    
     <app-navbar></app-navbar>
 </ion-content>
 

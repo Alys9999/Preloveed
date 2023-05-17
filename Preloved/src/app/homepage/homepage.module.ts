@@ -6,6 +6,7 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomePage } from './homepage.page';
 import { NavbarModule } from '../components/navbar/navbar.module';
 import { ProductcardModule } from '../components/productcard/productcard.module';
+import { Homeproductcardmodule } from '../components/homeproductcard/homeproductcard.module';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { ProductcardModule } from '../components/productcard/productcard.module'
     HomepageRoutingModule,
     NavbarModule,
     ProductcardModule,
-
+    Homeproductcardmodule
   ],
   declarations: [HomePage],
 })

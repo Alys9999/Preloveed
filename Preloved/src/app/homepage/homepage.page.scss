@@ -28,22 +28,32 @@ ion-menu-button {
   }
 
 .menu-button-design {
-  --color: white; /* Set the desired color */
-}
-
-.menu-button-design {
   --background: #FABE58;
-  --padding: 10px; /* Adjust the padding to change the size */
-  // --border-radius: 50%; 
 }
 
 .cart-button-design {
   --background: #FABE58;
-  --height: 50px;
 }
 
 .logo {
-  width: 40%;
+  width: 60%;
   height: auto;
   margin: 0 auto;
+}
+
+.searchbar {
+  --background: #FABE58;
+  --border-radius: 5px;
+  --icon-color: black;
+  --placeholder-color: black;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+  // height: 100%;
+  
+  // border: 1.5px solid black;
+
+  // --border-style: solid;
+  // --border-width: 2px;
+  // --border-color: black;
 }
