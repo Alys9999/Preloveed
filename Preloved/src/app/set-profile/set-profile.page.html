@@ -21,7 +21,7 @@
     text-align: center;
     margin: auto;">
       
-      <ion-input id="Name" [(ngModel)]="Name" placeholder="Enter Here" size="small" 
+      <ion-input id="Name" [(ngModel)]="Name" value="Name" placeholder="Enter Here" size="small" 
       style="background-color: #D9D9D9;
       border-radius: 10px;
       margin: 5px;
@@ -36,7 +36,7 @@
       <!--this is the bio box-->
       <ion-item  style="height: 4cm;">
         <ion-label position="stacked">Biography</ion-label>
-        <ion-input id="Bio" [(ngModel)]="Bio" placeholder="Enter Here"  
+        <ion-input id="Bio" [(ngModel)]="Bio" value="Bio" placeholder="Enter Here"  
         style="background-color: #D9D9D9;
         height: 3cm;
         border-radius: 10px;
@@ -48,7 +48,7 @@
               <!--this is the email box-->
               <ion-item>
                 <ion-label position="stacked">Email</ion-label>
-                <ion-input id="Email" [(ngModel)]="Email"  placeholder="Enter Here"  
+                <ion-input id="Email" [(ngModel)]="Email" value="Email"  placeholder="Enter Here"  
                 style="background-color: #D9D9D9;
                 border-radius: 10px;
                 margin: 5px;"
@@ -60,7 +60,7 @@
                 <!--this is the number box-->
                 <ion-item>
                   <ion-label position="stacked">Phone Number</ion-label>
-                  <ion-input id="number" [(ngModel)]="PhoneNumber"  placeholder="Enter Here"  
+                  <ion-input id="number" [(ngModel)]="PhoneNumber" value="PhoneNumber" placeholder="Enter Here"  
                   style="background-color: #D9D9D9;
                   border-radius: 10px;
                   margin: 5px;"
@@ -70,7 +70,7 @@
                   </ion-item>
               
               <ion-item>
-                <ion-button style="width: 3cm; margin: auto;" (click)="saveProfile()" href="../profile">
+                <ion-button style="width: 3cm; margin: auto;" (click)="saveProfile()">
                   Save
                 </ion-button>
               </ion-item>
