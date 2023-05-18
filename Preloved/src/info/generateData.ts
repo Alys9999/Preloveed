@@ -65,21 +65,21 @@ export class GenerateData {
     }else{
       newSavedItems.push(newSaveItemId);
     }
-    this.updateCurrentUser(this.saveItemColumn, newSavedItems);
     this.current_user.savedItems = newSavedItems;
+    this.updateCurrentUser(this.saveItemColumn, newSavedItems);
   }
 
   //Add a new saved item to current user
   //INPUT: the PreLovedCard id of the new post
-  static addNewPreLovedCard(newPostId: string): void{
+  static addNewPost(newPostId: string) {
     let newPosts: string[] = Parse.User.current().get(this.postColumn);
-    if(newPosts == null){
+    if (newPosts == null) {
       newPosts = [newPostId];
-    }else{
+    } else {
       newPosts.push(newPostId);
     }
-    this.updateCurrentUser(this.postColumn, newPosts);
     this.current_user.savedItems = newPosts;
+    this.updateCurrentUser(this.postColumn, newPosts);
   }
 
   /*PreLovedCard*/
@@ -87,37 +87,43 @@ export class GenerateData {
   //INPUT: PreLovedCard's id
   //OUTPUT: the corresponding PreLovedCard, or null if that PreLovedCard does not exist.
   static getPreLovedCardById(preLovedId: string): PreLovedCard | null {
-    let query = Parse.Query("Post");
+    let Post = Parse.Object.extend("Post");
+    let query = new Parse.Query(Post);
     query.equalTo(this.idColumn, preLovedId);
-    let post = query.first();
-    if(post == null){
+    let preLoved = new PreLovedCard();
+    preLoved.id = preLovedId;
+    query.first().then((post: any) => {
+      preLoved.title = post.get(this.titleColumn)?.toString();
+      preLoved.category = post.get(this.categoryColumn)?.toString();
+      preLoved.images = post.get(this.imagesColumn)?.toString();
+      preLoved.price = post.get(this.priceColumn);
+      preLoved.condition = post.get(this.conditionColumn)?.toString();
+      preLoved.description = post.get(this.descriptionColumn)?.toString();
+    }).catch((error: any) => {
+      console.error('Error finding post:', error);
       return null;
-    }
-    let preLoved = new PreLovedCard(preLovedId);
-    preLoved.title = post.get(this.titleColumn);
-    preLoved.category = post.get(this.categoryColumn);
-    preLoved.images = post.get(this.imagesColumn);
-    preLoved.price = post.get(this.priceColumn);
-    preLoved.condition = post.get(this.conditionColumn);
-    preLoved.description = post.get(this.descriptionColumn);
+    });
     return preLoved;
   }
-  //add a new post to database
+  //add a new post to database, and this function will also update the current_user's post.
   //INPUT: A PreLovedCard that contains all the information about this prelove item
-  static async postNewPreLovedCard(preLovedCard: PreLovedCard) {
-    let Post = Parse.Object.extends("Post");
+  static postNewPreLovedCard(preLovedCard: PreLovedCard): void{
+    let Post = Parse.Object.extend("Post");
     let post = new Post();
-    post.set(this.idColumn, preLovedCard.id);
+    // Set the values of the post properties
+    //post.set(this.idColumn, preLovedCard.id);
     post.set(this.titleColumn, preLovedCard.title);
     post.set(this.categoryColumn, preLovedCard.category);
     post.set(this.imagesColumn, preLovedCard.images);
     post.set(this.priceColumn, preLovedCard.price);
     post.set(this.conditionColumn, preLovedCard.condition);
     post.set(this.descriptionColumn, preLovedCard.description);
-    await post.save().then(() => {
-      console.log('Successful updated');
+    // Save the new post to the server
+    post.save().then((post: any) => {
+      console.log('New post created with objectId: ' + post.id);
+      this.addNewPost(post.id);
     }).catch((error: any) => {
-      console.error(`Error saving: ${error}`);
+      console.error('Error creating new post: ' + error);
     });
   }
 

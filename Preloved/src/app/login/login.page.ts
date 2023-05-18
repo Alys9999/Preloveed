@@ -31,8 +31,8 @@ export class LoginPage implements OnInit {
       GenerateData.current_user = GenerateData.getCurrentUser();
 
       //TEST
-      //preLovedCard: PreLovedCard = new PreLovedCard();
-
+      let getPreLoved = GenerateData.getPreLovedCardById("eR8sUHXV8M");
+      console.log(getPreLoved);
 
       // jump to home page
       this.router.navigateByUrl('/folder/inbox');
