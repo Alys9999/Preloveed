@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <!--this is the name box-->
+    <ion-item style="
+    width: 6cm;
+    text-align: center;
+    margin: auto;">
+      
+      <ion-input id="Name" [(ngModel)]="Name" value="Name" placeholder="Enter Here" size="small" 
+      style="background-color: #D9D9D9;
+      border-radius: 10px;
+      margin: 5px;
+      text-align: justify;"
+      >
+
+      <ion-label>Name</ion-label>
+    </ion-input>
+
+      </ion-item>
+
+      <!--this is the bio box-->
+      <ion-item  style="height: 4cm;">
+        <ion-input label="Biography" labelPlacement="stacked" id="Bio" [(ngModel)]="Bio" value="Bio" placeholder="Enter Here"  
+        style="background-color: #D9D9D9;
+        height: 3cm;
+        border-radius: 10px;
+        margin-top: 10px;">
+      </ion-input>
+        
+        </ion-item>
+
+              <!--this is the email box-->
+              <ion-item>
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input id="Email" [(ngModel)]="Email" value="Email"  placeholder="Enter Here"  
+                style="background-color: #D9D9D9;
+                border-radius: 10px;
+                margin: 5px;"
+                >
+              </ion-input>
+                
+                </ion-item>
+
+                <!--this is the number box-->
+                <ion-item>
+                  <ion-label position="stacked">Phone Number</ion-label>
+                  <ion-input id="number" [(ngModel)]="PhoneNumber" value="PhoneNumber" placeholder="Enter Here"  
+                  style="background-color: #D9D9D9;
+                  border-radius: 10px;
+                  margin: 5px;"
+                  >
+                </ion-input>
+
+                  </ion-item>
+              
+              <ion-item>
+                <ion-button style="width: 3cm; margin: auto;" (click)="saveProfile()">
+                  Save
+                </ion-button>
+              </ion-item>
+              
+
+
+
+
+
+  </div>
+</ion-content>
