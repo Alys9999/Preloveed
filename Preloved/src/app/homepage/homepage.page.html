@@ -1,0 +1,58 @@
+<!-- I suggest 2 people work on the homepage, 
+    including the navigation bar, product cards,  'add to relevancy,' and saved items features. -->
+
+<!-- CREATING A NEW MODULE --- 
+ng g c "COMPONENTNAME" in terminal
+create component.module.ts
+import in homepage module -->
+
+
+
+<ion-header>
+    <ion-toolbar color="default">
+        
+        <ion-menu-button slot="start" class="menu-button-design" color="light"></ion-menu-button>
+        
+        <ion-img src="assets/icon/logo.svg" class="logo"></ion-img>
+        
+        <ion-button class="cart-button-design" slot="end">
+            <ion-icon name="cart" src="assets/icon/cart.svg"></ion-icon>
+        </ion-button>
+    
+    </ion-toolbar>
+</ion-header>
+
+<div class="scrollable-row">
+    <div class="row-flex-container">
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+        <ion-button size="small" class="row-flex-item no-ripple">Item 1</ion-button>
+    </div>
+</div>
+
+<ion-content>
+    
+    <ion-searchbar class="searchbar"></ion-searchbar>
+
+    <div class="product-flex">
+        <app-homeproductcard></app-homeproductcard>
+        <app-homeproductcard></app-homeproductcard>
+        <app-homeproductcard></app-homeproductcard>
+        <app-homeproductcard></app-homeproductcard>
+    </div>
+
+    <app-productcard></app-productcard>
+
+    <app-columnview></app-columnview>
+    
+</ion-content>
+
+<app-navbar></app-navbar>
+
+
