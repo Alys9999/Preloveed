@@ -16,13 +16,19 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-  path: 'set-profile',
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'set-profile',
     loadChildren: () => import('./set-profile/set-profile.module').then( m => m.SetProfilePageModule)
   },
   {
     path: 'home',
     loadChildren: () => import('./homepage/homepage.module').then( m => m.HomepagePageModule)
   }
+
+
 ];
 
 @NgModule({
