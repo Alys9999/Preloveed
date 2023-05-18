@@ -29,11 +29,6 @@ export class LoginPage implements OnInit {
     Parse.User.logIn(this.username, this.password).then((resp: String) => {
       //Create current_user data
       GenerateData.current_user = GenerateData.getCurrentUser();
-
-      //TEST
-      let getPreLoved = GenerateData.getPreLovedCardById("eR8sUHXV8M");
-      console.log(getPreLoved);
-
       // jump to home page
       this.router.navigateByUrl('/folder/inbox');
     }, (err: { message: any; }) => {
