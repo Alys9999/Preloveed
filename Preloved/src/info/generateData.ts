@@ -3,6 +3,7 @@ import Parse from "parse";
 import {save} from "ionicons/icons";
 import {PreLovedCard} from "./PreLovedCard";
 
+
 export class GenerateData {
   /*USER*/
   //Store the current user's data. Be assigned upon login or signup.
