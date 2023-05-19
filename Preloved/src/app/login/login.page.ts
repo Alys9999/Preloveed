@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular';
 import Parse from "parse";
 import {Router} from "@angular/router";
 import {GenerateData} from "../../info/generateData";
+import {PreLovedCard} from "../../info/PreLovedCard";
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,9 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    if(Parse.User.current() != null){
+      this.logOut();
+    }
   }
 
   signIn() {
@@ -70,6 +74,21 @@ export class LoginPage implements OnInit {
 
     }, (err: { message: any; }) => {
       console.log('Error signing in', err);
+
+      this.toastController.create({
+        message: err.message,
+        duration: 2000
+      }).then((toast) => {
+        toast.present();
+      });
+    });
+  }
+
+  logOut() {
+    Parse.User.logOut().then(() => {
+      console.log('Logged out successfully');
+    }, (err: { message: any; }) => {
+      console.log('Error logging out', err);
 
       this.toastController.create({
         message: err.message,
