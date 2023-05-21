@@ -6,7 +6,8 @@ ng g c "COMPONENTNAME" in terminal
 create component.module.ts
 import in homepage module -->
 
-
+<!-- blur background -->
+<!-- <div class="clicked-background" (click)="removeBg($event)" *ngIf="isBgBlurred"></div>  -->
 
 <ion-header>
     <ion-toolbar color="default">
@@ -41,11 +42,75 @@ import in homepage module -->
     <ion-searchbar class="searchbar"></ion-searchbar>
 
     <div class="product-flex">
-        <app-homeproductcard></app-homeproductcard>
-        <app-homeproductcard></app-homeproductcard>
-        <app-homeproductcard></app-homeproductcard>
-        <app-homeproductcard></app-homeproductcard>
+        <!-- [ngClass]="{'featured-card-component': isFeatured}" -->
+        <!-- <ion-card ion-gesture (click)="onSwipe($event)"><app-homeproductcard></app-homeproductcard></ion-card> -->
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" ></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" ></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
     </div>
+    <!-- <div #myElement>  -->
+        <div class="display-items-container" *ngIf="isFeatured">
+            <!-- <div class="clicked-background"></div> -->
+            <div class="saved-items-container">
+                <div class="saved-items-title">Saved Items</div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+            </div>
+            <div class="relevancy-items">
+                <div class="saved-items-title">Relevent Items</div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+                <div class="saved-item"></div>
+            </div>
+            <div class="featured-card"><app-homeproductcard></app-homeproductcard></div>
+            <div class="similar-items">
+                  <ion-content class="ion-padding">
+                    <ion-button expand="block" (click)="setSimilarItemsOpen(true)">Similar Items</ion-button>
+                    <ion-modal class="similar-items-modal" [isOpen]="isSimilarItemsOpen">
+                      <ng-template>
+                        <ion-header>
+                          <ion-toolbar>
+                            <ion-title>Similar Items</ion-title>
+                            <ion-buttons slot="end">
+                              <ion-button (click)="setSimilarItemsOpen(false)">Close</ion-button>
+                            </ion-buttons>
+                          </ion-toolbar>
+                        </ion-header>
+                        <ion-content class="ion-padding">
+                            <div class="product-flex">
+                                <!-- [ngClass]="{'featured-card-component': isFeatured}" -->
+                                <!-- <ion-card ion-gesture (click)="onSwipe($event)"><app-homeproductcard></app-homeproductcard></ion-card> -->
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard ></app-homeproductcard>
+
+                            </div>
+                        </ion-content>
+                      </ng-template>
+                    </ion-modal>
+                  </ion-content>
+            </div>
+            
+            <!-- <app-homeproductcard></app-homeproductcard> -->
+
+                    
+            <!-- </div> -->
+            <!-- <app-homeproductcard [ngClass]="{'featured-card-component': isFeatured}"></app-homeproductcard> -->
+        </div>
+    <!-- </div> -->
 
     <app-productcard></app-productcard>
 
