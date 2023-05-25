@@ -16,6 +16,8 @@ export class GenerateData {
   static saveItemColumn: string = "saveItems";
   static avatarColumn: string = "avatarLink";
 
+  static biographyColumn: string = "biography";
+
   /* PreLovedCard */
   //Column name
   static idColumn: string = "objectId";
@@ -41,7 +43,8 @@ export class GenerateData {
     let phoneNumber = cu.get(this.phoneNumberColumn);
     let post = cu.get(this.postColumn);
     let savedItems = cu.get(this.saveItemColumn);
-    return new User(username, email, avatar, address, phoneNumber, post, savedItems);
+    let biography = cu.get(this.biographyColumn);
+    return new User(username, email, avatar, address, phoneNumber, post, savedItems, biography);
   }
 
   //Update information for current user to database

@@ -9,6 +9,8 @@ export class User {
   post: string[] | undefined; //only store the id of each posts
   savedItems: string[] | undefined; //only store the id of each posts
 
+  biography: string | undefined;
+
   constructor(
     username: string,
     email?: string,
@@ -17,6 +19,7 @@ export class User {
     phoneNumber?: string,
     post?: string[],
     savedItems?: string[],
+    biography?: string
   ) {
     this.username = username;
     this.email = email;
@@ -25,5 +28,6 @@ export class User {
     this.phoneNumber = phoneNumber;
     this.post = post;
     this.savedItems = savedItems;
+    this.biography = biography;
   }
 }
