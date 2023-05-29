@@ -1,7 +1,8 @@
 //Store all information about this user
 //MUST HAVE: username
 export class User {
-  username: string;
+  userId: string;
+  username?: string;
   email: string | undefined;
   avatar: string | undefined;
   address: string | undefined;
@@ -9,18 +10,23 @@ export class User {
   post: string[] | undefined; //only store the id of each posts
   savedItems: string[] | undefined; //only store the id of each posts
 
+  chats: string[] | undefined; //only store the id of each chat
+
   biography: string | undefined;
 
   constructor(
-    username: string,
+    userId: string,
+    username?: string,
     email?: string,
     avatar?: string,
     address?: string,
     phoneNumber?: string,
     post?: string[],
     savedItems?: string[],
-    biography?: string
+    biography?: string,
+    chats?: string[]
   ) {
+    this.userId = userId;
     this.username = username;
     this.email = email;
     this.avatar = avatar;
@@ -29,5 +35,6 @@ export class User {
     this.post = post;
     this.savedItems = savedItems;
     this.biography = biography;
+    this.chats = chats;
   }
 }
