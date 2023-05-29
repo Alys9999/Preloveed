@@ -1,31 +1,4 @@
-// ion-menu-button {
-//     color: var(--ion-color-primary);
-//   }
-  
-//   #container {
-//     text-align: center;
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 50%;
-//     transform: translateY(-50%);
-//   }
-  
-//   #container strong {
-//     font-size: 20px;
-//     line-height: 26px;
-//   }
-  
-//   #container p {
-//     font-size: 16px;
-//     line-height: 22px;
-//     color: #8c8c8c;
-//     margin: 0;
-//   }
-  
-//   #container a {
-//     text-decoration: none;
-//   }
+
 
 .scrollable-row {
   overflow-x: scroll;
@@ -73,15 +46,6 @@
   --icon-color: black;
   --placeholder-color: black;
   --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-
-  // height: 100%;
-  
-  // border: 1.5px solid black;
-
-  // --border-style: solid;
-  // --border-width: 2px;
-  // --border-color: black;
 }
 
 .product-flex {
@@ -94,4 +58,154 @@
 app-homeproductcard {
   flex: 0 0 calc(50%); 
   margin-bottom: -2vh;
+}
+
+.featured-card-component {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  /* Additional styles for the featured component */
+}
+
+.saved-items-container {
+  display: flex;
+  flex-direction: column;
+  // margin-top: 2vh;
+  // row-gap: 1vh;
+  // justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: fixed;
+  width: 142px;
+  height: 361px;
+  left: 208px;
+  top: 80px;
+
+  background: #FDE3A7;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.display-items-container {
+  z-index: 9999;
+}
+
+.saved-items-title {
+  margin-top: 1vh;
+  color: black;
+}
+
+.relevancy-items {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  // margin-top: 2vh;
+  // row-gap: 1vh;
+  // justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  width: 142px;
+  height: 361px;
+  left: 40px;
+  top: 80px;
+
+  background: #FDE3A7;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.clicked-background {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .25);
+  // opacity: 40%;
+  position: absolute;
+  // z-index: 1;
+}
+
+.featured-card {
+  // box-sizing: border-box;
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  // border: 1px solid #000000;
+  // border-radius: 10px;
+}
+
+.similar-items {
+  position: fixed;
+  width: 390px;
+  height: 162px;
+  left: 0px;
+  // top: 641px;
+  bottom: 0px;
+
+  background: #FABE58 !important;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+}
+
+ion-modal {
+  --background : #FABE58 !important;
+}
+
+.similar_items ion-content {
+  --background : #FABE58 !important;
+}
+
+ion-content ion-button {
+  --background: white;
+  --color: black;
+}
+
+ion-modal ion-content {
+  --background: white;
+
+}
+
+ion-content ion-content  {
+  --background: #FABE58;
+  box-shadow: rgba(0, 0, 0, 0.25) -1px 2px 7px 5px;
+
+}
+
+ion-modal ion-toolbar {
+  --background: #FABE58;
+  --color: black;
+} 
+.ion-padding {
+  color	: #FABE58 !important;
+}
+
+
+.saved-item {
+  box-sizing: border-box;
+  margin-top: 1.5vh;
+
+  // position: absolute;
+  width: 115px;
+  height: 66px;
+  // left: 51px;
+  // top: 325px;
+
+  border: 1px dashed #000000;
+  border-radius: 10px;
+}
+
+#background-content {
+  left: 0px;
+  right: 0px;
+  top: calc(var(--offset-top) * -1);
+  bottom: calc(var(--offset-bottom) * -1);
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.25) -1px 2px 4px 0px inset;
+  background: var(--background);
 }
