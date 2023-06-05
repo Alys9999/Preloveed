@@ -18,7 +18,7 @@
     <!--this is the name box-->
     <ion-item >
       
-      <ion-input id="Name" label="Name" label-placement="stacked" [readonly]="true" placeholder="Your Name" 
+      <ion-input [value]="name" id="Name" label="Name" label-placement="stacked" [readonly]="true" placeholder="Your Name" 
       style="
       border-radius: 10px;
       margin: 5px;
@@ -35,7 +35,7 @@
 
       <!--this is the bio box-->
       <ion-item  style="height: 4cm;">
-        <ion-input id="Bio" label="Biography" label-placement="stacked" [readonly]="true"  placeholder="About You"  
+        <ion-input [value]="bio" id="Bio" label="Biography" label-placement="stacked" [readonly]="true"  placeholder="About You"  
         style="
         height: 3cm;
         border-radius: 10px;
@@ -47,7 +47,7 @@
               <!--this is the email box-->
               <ion-item>
                 <ion-label position="stacked">Email</ion-label>
-                <ion-input id="Email" [readonly]="true" placeholder="Your Email"  
+                <ion-input [value]="email" id="Email" [readonly]="true" placeholder="Your Email"  
                 style="
                 border-radius: 10px;
                 margin: 5px;"
@@ -59,7 +59,7 @@
                 <!--this is the number box-->
                 <ion-item>
                   <ion-label position="stacked">Phone Number</ion-label>
-                  <ion-input id="number" [readonly]="true" placeholder="Your Phone Number"  
+                  <ion-input [value]="phoneNumber" id="number" [readonly]="true" placeholder="Your Phone Number"  
                   style="
                   border-radius: 10px;
                   margin: 5px;"
