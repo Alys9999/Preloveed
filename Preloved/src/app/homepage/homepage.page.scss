@@ -60,6 +60,12 @@ app-homeproductcard {
   margin-bottom: -2vh;
 }
 
+.featured-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .featured-card-component {
   position: fixed;
   top: 50%;

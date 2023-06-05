@@ -44,33 +44,41 @@ import in homepage module -->
     <div class="product-flex">
         <!-- [ngClass]="{'featured-card-component': isFeatured}" -->
         <!-- <ion-card ion-gesture (click)="onSwipe($event)"><app-homeproductcard></app-homeproductcard></ion-card> -->
-        <app-homeproductcard (click)="DisplayMoreInfo($event)" ></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)" ></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
-        <app-homeproductcard (click)="DisplayMoreInfo($event)"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Nike Shoes" distance="0.2 mi" imageURL="assets/sample-data/shoes1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Scooter" distance="1 mi" imageURL="assets/sample-data/scooter1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="HELLO KITTY..." distance="1.2 mi" imageURL="assets/sample-data/hellokitty1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Desk Chair" distance="0.7 mi" imageURL="assets/sample-data/chair1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Long Sleeve..." distance="0.3 mi" imageURL="assets/sample-data/shirt1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Gaming PC" distance="0.9 mi" imageURL="assets/sample-data/pc1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Electric Bike" distance="1.6 mi" imageURL="assets/sample-data/bike.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Video Camera" distance="0.4 mi" imageURL="assets/sample-data/camera1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Desk Lamp" distance="0.8 mi" imageURL="assets/sample-data/lamp1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Bass Pro Hat" distance="0.1 mi" imageURL="assets/sample-data/hat1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="Designer Pu..." distance="0.9 mi" imageURL="assets/sample-data/purse1.svg"></app-homeproductcard>
+        <app-homeproductcard (click)="DisplayMoreInfo($event)" productName="iPhone XR" distance="1.5 mi" imageURL="assets/sample-data/phone1.svg"></app-homeproductcard>
+
+
+
+
     </div>
     <!-- <div #myElement>  -->
         <div class="display-items-container" *ngIf="isFeatured">
             <!-- <div class="clicked-background"></div> -->
             <div class="saved-items-container">
                 <div class="saved-items-title">Saved Items</div>
-                <div class="saved-item"></div>
-                <div class="saved-item"></div>
-                <div class="saved-item"></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/saved1.svg"></ion-img></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/saved2.svg"></ion-img></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/saved3.svg"></ion-img></div>
                 <div class="saved-item"></div>
             </div>
             <div class="relevancy-items">
                 <div class="saved-items-title">Relevent Items</div>
-                <div class="saved-item"></div>
-                <div class="saved-item"></div>
-                <div class="saved-item"></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/r1.svg"></ion-img></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/r2.svg"></ion-img></div>
+                <div class="saved-item"><ion-img src="assets/sample-data/r3.svg"></ion-img></div>
                 <div class="saved-item"></div>
             </div>
-            <div class="featured-card"><app-homeproductcard></app-homeproductcard></div>
+            <div class="featured-card"> <ion-img src="assets/sample-data/shoes1.svg"></ion-img> </div>
             <div class="similar-items">
                   <ion-content class="ion-padding">
                     <ion-button expand="block" (click)="setSimilarItemsOpen(true)">Similar Items</ion-button>
@@ -88,14 +96,14 @@ import in homepage module -->
                             <div class="product-flex">
                                 <!-- [ngClass]="{'featured-card-component': isFeatured}" -->
                                 <!-- <ion-card ion-gesture (click)="onSwipe($event)"><app-homeproductcard></app-homeproductcard></ion-card> -->
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
-                                <app-homeproductcard ></app-homeproductcard>
+                                <app-homeproductcard productName="Air Jordan..." distance="0.2 mi" imageURL="assets/sample-data/shoes2.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Air Jordan..." distance="1 mi" imageURL="assets/sample-data/shoes3.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Jordan 1" distance="1.2 mi" imageURL="assets/sample-data/shoes4.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Off White..." distance="1.2 mi" imageURL="assets/sample-data/shoes5.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Jordan Th..." distance="0.7 mi" imageURL="assets/sample-data/shoes6.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Air Jordans" distance="0.3 mi" imageURL="assets/sample-data/shoes7.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Air Max 97" distance="0.9 mi" imageURL="assets/sample-data/shoes8.svg"></app-homeproductcard>
+                                <app-homeproductcard productName="Dunk Lows" distance="1.6 mi" imageURL="assets/sample-data/shoes9.svg"></app-homeproductcard>
 
                             </div>
                         </ion-content>
@@ -112,9 +120,9 @@ import in homepage module -->
         </div>
     <!-- </div> -->
 
-    <app-productcard></app-productcard>
+    <!-- <app-productcard></app-productcard> -->
 
-    <app-columnview></app-columnview>
+    <!-- <app-columnview></app-columnview> -->
     
 </ion-content>
 
