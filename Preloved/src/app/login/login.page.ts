@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
       //Create current_user data
       GenerateData.current_user = GenerateData.getCurrentUser();
       // jump to home page
-      this.router.navigateByUrl('/folder/inbox');
+      this.router.navigateByUrl('/profile');
     }, (err: { message: any; }) => {
       console.log('Error logging in', err);
 

@@ -1,31 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header></ion-header>
 
-<ion-content [fullscreen]="true" class="ion-text-center">
-  <h1 class="ion-padding-top">PreLoved</h1>
+<ion-content [fullscreen]="true" class="ion-text-center login_page">
+  <ion-grid>
+    <ion-row></ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-item color="#FDE3A7">
+          <h1 style="color: black;"><b>PreLoved</b></h1>
+        </ion-item>
+        <img src="assets/icon/logo.svg">
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <ion-item>
-    <ion-label position="stacked">Username</ion-label>
-    <ion-input [(ngModel)]="username"></ion-input>
+
+  <ion-item color="#FDE3A7">
+    <ion-label position="stacked" style="color: black;">Username</ion-label>
+    <ion-input [(ngModel)]="username" fill="solid"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
+  <ion-item color="#FDE3A7">
+    <ion-label position="stacked" style="color: black;">Password</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
   <ion-row class="ion-margin-top">
     <ion-col size="12" size-md="6" offset-md="3">
-      <ion-button expand="block" (click)="signUp()">SIGN UP</ion-button>
+      <ion-button expand="block" (click)="signUp()" class="loginButton">SIGN UP</ion-button>
     </ion-col>
   </ion-row>
 
   <ion-row class="ion-margin-top">
     <ion-col size="12" size-md="6" offset-md="3">
-      <ion-button expand="block" (click)="signIn()">SIGN IN</ion-button>
+      <ion-button expand="block" (click)="signIn()" class="loginButton">SIGN IN</ion-button>
     </ion-col>
   </ion-row>
 
