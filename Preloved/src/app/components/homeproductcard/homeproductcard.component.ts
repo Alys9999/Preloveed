@@ -6,6 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./homeproductcard.component.scss'],
 })
 export class HomeproductcardComponent  implements OnInit {
+  @Input() imageURL: string = '';
+  @Input() productName: string = '';
+  @Input() distance: string = '';
 
   constructor() { }
 
