@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {GenerateData} from '../../info/generateData';
 import { User } from 'src/info/User';
 import Parse from "parse";
+import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-set-profile',
@@ -15,7 +17,7 @@ export class SetProfilePage implements OnInit {
   email: string | undefined;
   phoneNumber: string | undefined;  
 
-  constructor() {
+  constructor(private router: Router) {
     Parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("L1FFfpsxK7K1wvaTujWJUASQjfvBz5LNUDdPvK5E", "wIgCTMul7e9DrhNlU0oEUW0mlSml2xF05gB0n0BI");
    }
@@ -28,10 +30,12 @@ export class SetProfilePage implements OnInit {
     this.phoneNumber = this.user.phoneNumber;
   }
 
-  saveProfile(){
-    GenerateData.updateCurrentUser("username", this.user);
-    GenerateData.updateCurrentUser("email", this.email);
-    GenerateData.updateCurrentUser("phoneNumber", this.phoneNumber);
-    GenerateData.updateCurrentUser("biography", this.bio);
+  async saveProfile(){
+    await GenerateData.updateCurrentUser("username", this.name);
+    await GenerateData.updateCurrentUser("email", this.email);
+    await GenerateData.updateCurrentUser("phoneNumber", this.phoneNumber);
+    await GenerateData.updateCurrentUser("biography", this.bio);
+   // await GenerateData.current_user=GenerateData.getCurrentUser();
+   this.router.navigate(['./profile']);
   }
 }
