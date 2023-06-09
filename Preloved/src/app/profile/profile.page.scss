@@ -1,0 +1,31 @@
+.namestyle{
+    --background: #FABE58;
+    --border-width: 5px;
+    --border-color: black; 
+    border-radius: 5px;
+    margin: auto;   
+    width: 300px;
+}
+
+.biostyle{
+    --background: #FABE58; 
+    border-radius: 5px;
+    margin: auto;   
+    width: 90%;
+    height: 4cm;
+}
+
+.otherstyle{
+    --background: #FABE58; 
+    border-radius: 5px;
+    margin: auto;   
+    width: 90%;
+}
+
+ion-button{
+    --background: #FABE58;     
+}
+
+ion-label{
+    margin-left: 50px
+}

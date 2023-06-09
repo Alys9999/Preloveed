@@ -1,76 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Profile</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-general-header></app-general-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
+      <ion-title size="large">My Profile</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
     <!--this is the name box-->
-    <ion-item >
-      
-      <ion-input [value]="name" id="Name" label="Name" label-placement="stacked" [readonly]="true" placeholder="Your Name" 
-      style="
-      border-radius: 10px;
-      margin: 5px;
-      text-align: justify;
-      width: 6cm;
-      text-align: center;
-      margin: auto;
-      margin-top: 10px;"
-      
-      >
-    </ion-input>
-
-      </ion-item>
+    <ion-label position="stacked" style="margin-left: 50px;">Name</ion-label>
+    <ion-item class="namestyle">
+      <ion-input [value]="name" id="Name" [readonly]="true" placeholder="Your Name" style="text-align: center;">
+      </ion-input>
+    </ion-item>
 
       <!--this is the bio box-->
-      <ion-item  style="height: 4cm;">
-        <ion-input [value]="bio" id="Bio" label="Biography" label-placement="stacked" [readonly]="true"  placeholder="About You"  
-        style="
-        height: 3cm;
-        border-radius: 10px;
-        margin-top: 10px;">
-      </ion-input>
+      <ion-label position="stacked">Biography</ion-label>
+      <ion-item class="biostyle">
+        <ion-textarea [value]="bio" [readonly]="true"  placeholder="About You" rows="5">
+      </ion-textarea>
         
         </ion-item>
 
               <!--this is the email box-->
-              <ion-item>
-                <ion-label position="stacked">Email</ion-label>
-                <ion-input [value]="email" id="Email" [readonly]="true" placeholder="Your Email"  
-                style="
-                border-radius: 10px;
-                margin: 5px;"
-                >
-              </ion-input>
-                
-                </ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-item class="otherstyle">
+                  <ion-input [value]="email" id="Email" [readonly]="true" placeholder="Your Email"  
+                  style="
+                  border-radius: 10px;
+                  margin: 5px;"
+                  >
+                  </ion-input>
+              </ion-item>
 
+
+                <ion-label position="stacked">Phone Number</ion-label>
                 <!--this is the number box-->
-                <ion-item>
-                  <ion-label position="stacked">Phone Number</ion-label>
+                <ion-item class="otherstyle">
                   <ion-input [value]="phoneNumber" id="number" [readonly]="true" placeholder="Your Phone Number"  
                   style="
                   border-radius: 10px;
                   margin: 5px;"
                   >
-                </ion-input>
-
-                  </ion-item>
+                  </ion-input>
+                </ion-item>
               
               <ion-item>
                 <ion-button style="width: 3cm; margin: auto;" href="../set-profile">
-                  Edit Profile
+                  <p style="color: black;">Edit Profile</p>
                 </ion-button>
               </ion-item>
               
